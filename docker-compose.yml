@@ -24,7 +24,7 @@ services:
     volumes:
       - pgadmin-data:/var/lib/pgadmin
     
-# Opcjonalny serwis dla appki Node.js 
+# Opcjonalny serwis dla appki w Node.js 
 # app:
 #  build: .
 #  ports:

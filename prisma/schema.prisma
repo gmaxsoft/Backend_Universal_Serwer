@@ -18,3 +18,12 @@ model User {
   email     String   @unique
   name      String?
 }
+
+model MainRoutes {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  method    String
+  url       String
+  name      String?
+  userId    Int?
+}
