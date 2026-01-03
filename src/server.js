@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT;
 const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
-const prisma = new PrismaClient({ adapter, errorFormat: 'colorless' });
+const prisma = new PrismaClient({ adapter });
 
 app.use(express.json());
 
