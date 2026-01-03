@@ -31,19 +31,17 @@ async function main() {
 
   // Create MainRoutes entries
   const routes = [
-    { method: 'GET', url: '/', name: 'Root API Info' },
-    { method: 'POST', url: '/auth/register', name: 'User Registration' },
-    { method: 'POST', url: '/auth/login', name: 'User Login' },
-    { method: 'GET', url: '/users', name: 'Get All Users' },
-    { method: 'GET', url: '/users/:id', name: 'Get User by ID' },
-    { method: 'POST', url: '/users', name: 'Create User' },
-    { method: 'PUT', url: '/users/:id', name: 'Update User' },
-    { method: 'DELETE', url: '/users/:id', name: 'Delete User' },
-    { method: 'GET', url: '/routes', name: 'Get All Routes' },
-    { method: 'GET', url: '/routes/:id', name: 'Get Route by ID' },
-    { method: 'POST', url: '/routes', name: 'Create Route' },
-    { method: 'PUT', url: '/routes/:id', name: 'Update Route' },
-    { method: 'DELETE', url: '/routes/:id', name: 'Delete Route' },
+    { method: 'GET', url: '/', name: 'Root API Info', modelName: null, action: null },
+    { method: 'GET', url: '/users', name: 'Get All Users', modelName: 'user', action: 'findMany' },
+    { method: 'GET', url: '/users/:id', name: 'Get User by ID', modelName: 'user', action: 'findUnique' },
+    { method: 'POST', url: '/users', name: 'Create User', modelName: 'user', action: 'create' },
+    { method: 'PUT', url: '/users/:id', name: 'Update User', modelName: 'user', action: 'update' },
+    { method: 'DELETE', url: '/users/:id', name: 'Delete User', modelName: 'user', action: 'delete' },
+    { method: 'GET', url: '/routes', name: 'Get All Routes', modelName: 'mainRoutes', action: 'findMany' },
+    { method: 'GET', url: '/routes/:id', name: 'Get Route by ID', modelName: 'mainRoutes', action: 'findUnique' },
+    { method: 'POST', url: '/routes', name: 'Create Route', modelName: 'mainRoutes', action: 'create' },
+    { method: 'PUT', url: '/routes/:id', name: 'Update Route', modelName: 'mainRoutes', action: 'update' },
+    { method: 'DELETE', url: '/routes/:id', name: 'Delete Route', modelName: 'mainRoutes', action: 'delete' },
   ];
 
   for (const route of routes) {

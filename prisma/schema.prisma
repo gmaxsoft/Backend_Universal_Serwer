@@ -24,8 +24,10 @@ model User {
 model MainRoutes {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
-  method    String
+  method    String 
   url       String
+  modelName String?   // np. "user" lub "mainRoutes"
+  action    String?   // np. "findMany", "findUnique", "create", "update", "delete"
   name      String?
   userId    Int?
 }

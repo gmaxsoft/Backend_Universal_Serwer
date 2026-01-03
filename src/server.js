@@ -2,8 +2,8 @@ import express from 'express'
 import dotenv from 'dotenv'
 import { PrismaClient } from '@prisma/client'
 import { PrismaPg } from '@prisma/adapter-pg'
-import { setupRoutes } from './routes/endpoints.js'
 import { setupAuthRoutes } from './routes/authRoutes.js'
+import { setupDynamicRoutes } from './routes/dynamicRoutes.js'
 import { errorHandler, notFoundHandler } from './middleware/middleware.js'
 
 dotenv.config();
@@ -15,8 +15,8 @@ const prisma = new PrismaClient({ adapter });
 
 app.use(express.json());
 
-setupRoutes(app);
 setupAuthRoutes(app);
+await setupDynamicRoutes(app, prisma);
 
 // Middleware dla błędów
 app.use(errorHandler);
